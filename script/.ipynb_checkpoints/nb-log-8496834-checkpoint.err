@@ -1,0 +1,2 @@
+usage: constant_N5000_cache.py [-h] [-n NSAMPLE]
+constant_N5000_cache.py: error: argument -n/--nsample: expected one argument
