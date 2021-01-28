@@ -1,0 +1,9 @@
+MutationRate: 250
+DemographicHistory: const_demog.txt
+DFEType: point
+DFEPointSelectionCoefficient: 0.01
+PrintSFS: 1
+n: 1000
+
+
+
