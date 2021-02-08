@@ -1,2 +1,4 @@
 data/
 output/
+script/**/*.err
+script/**/*.out

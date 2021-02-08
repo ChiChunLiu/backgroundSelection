@@ -14,4 +14,5 @@
 source ~/.bashrc
 conda activate bgs
 
-python3 constant_N5000_cache.py -n $n
+#python3 constant_N5000_cache.py -n $n
+python3 constant_N2289_cache.py -n $n
