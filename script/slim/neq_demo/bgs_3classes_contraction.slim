@@ -1,0 +1,17 @@
+initialize() {
+         initializeTreeSeq();
+         initializeMutationRate(0);
+         initializeMutationType("m1", 0.5, "f", 0);
+         initializeMutationType("m2", 0.5, "f", 0);
+         initializeMutationType("m3", 0.5, "f", 0);
+	 initializeGenomicElementType("g1", c(m1, m2, m3), c(0, 0, 1));
+         initializeGenomicElement(g1, 0, 5e5 -1);
+         initializeRecombinationRate(0);
+} 
+1 { sim.addSubpop("p1", 10000); }
+
+195000 { p1.setSubpopulationSize(N); }
+
+200000 late() {
+         sim.treeSeqOutput("../../../data/slim/bgs_3classes_noneq/bgs_3classes_contraction_N" + N + "rep" + rep + ".trees");
+}
