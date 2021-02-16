@@ -1,0 +1,5 @@
+name: slim
+channels:
+  - conda-forge
+dependencies:
+  - slim=3.4

@@ -1,4 +1,0 @@
-name: bgs
-channels:
-  - defaults
-prefix: /scratch/midway2/chichun/miniconda3/envs/bgs/envs/bgs

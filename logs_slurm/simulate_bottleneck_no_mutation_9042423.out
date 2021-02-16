@@ -1,0 +1,18 @@
+usage: slim -v[ersion] | -u[sage] | -testEidos | -testSLiM |
+   [-l[ong] [<l>]] [-s[eed] <seed>] [-t[ime]] [-m[em]] [-M[emhist]] [-x]
+   [-d[efine] <def>] [<script file>]
+
+   -v[ersion]       : print SLiM's version information
+   -u[sage]         : print command-line usage help
+   -testEidos | -te : run built-in self-diagnostic tests of Eidos
+   -testSLiM | -ts  : run built-in self-diagnostic tests of SLiM
+
+   -l[ong] [<l>]    : long (i.e., verbose) output of level <l> (default 2)
+   -s[eed] <seed>   : supply an initial random number seed for SLiM
+   -t[ime]          : print SLiM's total execution time (in user clock time)
+   -m[em]           : print SLiM's peak memory usage
+   -M[emhist]       : print a histogram of SLiM's memory usage
+   -x               : disable SLiM's runtime safety/consistency checks
+   -d[efine] <def>  : define an Eidos constant, such as "mu=1e-7"
+   <script file>    : the input script file (stdin may be used instead)
+

@@ -1,0 +1,53 @@
+{
+  "build": "h9c3ff4c_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=9.3.0",
+    "libstdcxx-ng >=9.3.0"
+  ],
+  "extracted_package_dir": "/scratch/midway2/chichun/miniconda3/envs/bgs/pkgs/slim-3.5-h9c3ff4c_0",
+  "features": "",
+  "files": [
+    "bin/eidos",
+    "bin/slim"
+  ],
+  "fn": "slim-3.5-h9c3ff4c_0.tar.bz2",
+  "license": "GPL-3.0",
+  "license_family": "GPL",
+  "link": {
+    "source": "/scratch/midway2/chichun/miniconda3/envs/bgs/pkgs/slim-3.5-h9c3ff4c_0",
+    "type": 1
+  },
+  "md5": "35b2558df1b46f299554c96a6bb2f20d",
+  "name": "slim",
+  "package_tarball_full_path": "/scratch/midway2/chichun/miniconda3/envs/bgs/pkgs/slim-3.5-h9c3ff4c_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/eidos",
+        "path_type": "hardlink",
+        "sha256": "ad53534c5a4b1285ff612250c581f69d06f3b5bb23147455faad81fb0f60c8fe",
+        "sha256_in_prefix": "ad53534c5a4b1285ff612250c581f69d06f3b5bb23147455faad81fb0f60c8fe",
+        "size_in_bytes": 4263528
+      },
+      {
+        "_path": "bin/slim",
+        "path_type": "hardlink",
+        "sha256": "d276e4ed1f2b7e5e5eba8b19c516004210ee6bf34a9e859df78c50a090f0cac6",
+        "sha256_in_prefix": "d276e4ed1f2b7e5e5eba8b19c516004210ee6bf34a9e859df78c50a090f0cac6",
+        "size_in_bytes": 7281160
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "slim=3.5",
+  "sha256": "99572ec02863ad6fed478d39512eb0da2b9201d4ec3096e98f9a7b0a01f10668",
+  "size": 3768919,
+  "subdir": "linux-64",
+  "timestamp": 1607406351889,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/slim-3.5-h9c3ff4c_0.tar.bz2",
+  "version": "3.5"
+}

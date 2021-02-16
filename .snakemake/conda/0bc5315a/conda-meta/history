@@ -1,0 +1,10 @@
+==> 2021-02-15 01:23:25 <==
+# cmd: /scratch/midway2/chichun/miniconda3/envs/bgs/bin/conda-env create --quiet --file /project2/jnovembre/ccliu/backgroundSelection/.snakemake/conda/0bc5315a.yaml --prefix /project2/jnovembre/ccliu/backgroundSelection/.snakemake/conda/0bc5315a
+# conda version: 4.9.2
++conda-forge/linux-64::_libgcc_mutex-0.1-conda_forge
++conda-forge/linux-64::_openmp_mutex-4.5-1_gnu
++conda-forge/linux-64::libgcc-ng-9.3.0-h2828fa1_18
++conda-forge/linux-64::libgomp-9.3.0-h2828fa1_18
++conda-forge/linux-64::libstdcxx-ng-9.3.0-h6de172a_18
++conda-forge/linux-64::slim-3.5-h9c3ff4c_0
+# update specs: ['slim=3.5']

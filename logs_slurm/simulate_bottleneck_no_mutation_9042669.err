@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	simulate_bottleneck_no_mutation
+	1
+Select jobs to execute...
+
+[Tue Feb 16 03:04:15 2021]
+rule simulate_bottleneck_no_mutation:
+    input: /project2/jnovembre/ccliu/backgroundSelection/scripts/slim/bgs_3classes_bottleneck.slim
+    output: /project2/jnovembre/ccliu/backgroundSelection/data/slim/bgs_3classes_noneq/bgs_bottleneck_noMutation.N500_rep1.trees
+    jobid: 0
+    wildcards: rep=1
+    resources: cpus=1, mem_mb=200, time_min=180, partition=jnovembre
+
+// ********** Initial memory usage: 1937408 bytes (1892K, 1.84766MB)
+// ********** Peak memory usage: 86073344 bytes (84056K, 82.0859MB)
+Waiting at most 5 seconds for missing files.
+MissingOutputException in line 69 of /project2/jnovembre/ccliu/backgroundSelection/workflow/snakefile.py:
+Job Missing files after 5 seconds:
+/project2/jnovembre/ccliu/backgroundSelection/data/slim/bgs_3classes_noneq/bgs_bottleneck_noMutation.N500_rep1.trees
+This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait.
+Job id: 0 completed successfully, but some output files are missing. 0
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/site-packages/snakemake/executors/__init__.py", line 583, in handle_job_success
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/site-packages/snakemake/executors/__init__.py", line 252, in handle_job_success
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message

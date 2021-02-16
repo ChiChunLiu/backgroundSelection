@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	dadi_cache
+	1
+Select jobs to execute...
+
+[Tue Feb 16 04:53:17 2021]
+rule dadi_cache:
+    input: /project2/jnovembre/ccliu/backgroundSelection/scripts/test.py
+    output: /project2/jnovembre/ccliu/backgroundSelection/output/bottleneck_spectra_n20.bpkl
+    jobid: 0
+    wildcards: cache_demo=bottleneck, ns=20
+    resources: cpus=1, mem_mb=2000, time_min=60, partition=jnovembre
+
+Traceback (most recent call last):
+  File "/project2/jnovembre/ccliu/backgroundSelection/.snakemake/scripts/tmpbyixaq6u.test.py", line 6, in <module>
+    with open(snakemake.output, 'w') as f:
+TypeError: expected str, bytes or os.PathLike object, not OutputFiles
+[Tue Feb 16 04:53:21 2021]
+Error in rule dadi_cache:
+    jobid: 0
+    output: /project2/jnovembre/ccliu/backgroundSelection/output/bottleneck_spectra_n20.bpkl
+
+RuleException:
+CalledProcessError in line 105 of /project2/jnovembre/ccliu/backgroundSelection/workflow/snakefile.py:
+Command 'set -euo pipefail;  /scratch/midway2/chichun/miniconda3/envs/bgs/bin/python3.8 /project2/jnovembre/ccliu/backgroundSelection/.snakemake/scripts/tmpbyixaq6u.test.py' returned non-zero exit status 1.
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/site-packages/snakemake/executors/__init__.py", line 2319, in run_wrapper
+  File "/project2/jnovembre/ccliu/backgroundSelection/workflow/snakefile.py", line 105, in __rule_dadi_cache
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/site-packages/snakemake/executors/__init__.py", line 568, in _callback
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/site-packages/snakemake/executors/__init__.py", line 554, in cached_or_run
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/site-packages/snakemake/executors/__init__.py", line 2350, in run_wrapper
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message

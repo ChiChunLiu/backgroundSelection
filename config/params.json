@@ -1,0 +1,5 @@
+{
+    "total_mutation_rate": 1e-7,
+    "genome_length": 5e5,
+    "mutation_proportion": [.16, .04, .8]
+}

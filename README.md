@@ -1,6 +1,8 @@
 # backgroundSelection
 (shared repository for the background selection project)
 
+To run the workflow, please run 
+
 ## Hypothesis 1: The presence of background selection biases estimates of gamma, towards more negative values
 please refer to the associated notebook for simulation set-ups and inference schemes: notebooks/bgs_bias_gamma.ipynb. 
 

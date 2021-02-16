@@ -1,8 +1,9 @@
-path:
-    script: '/project2/jnovembre/ccliu/backgroundSelection/script'
+paths:
+    scripts: '/project2/jnovembre/ccliu/backgroundSelection/scripts'
     data: '/project2/jnovembre/ccliu/backgroundSelection/data'
     output: '/project2/jnovembre/ccliu/backgroundSelection/output'
 params:
     standard_N: 5000
     base_mutation_rate: 1e-7
     genome_length: 5e5
+    

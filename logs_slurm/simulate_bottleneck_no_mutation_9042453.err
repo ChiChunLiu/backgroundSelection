@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	simulate_bottleneck_no_mutation
+	1
+Select jobs to execute...
+
+[Tue Feb 16 02:34:15 2021]
+rule simulate_bottleneck_no_mutation:
+    input: /project2/jnovembre/ccliu/backgroundSelection/scripts/slim/bgs_3classes_bottleneck.slim
+    output: /project2/jnovembre/ccliu/backgroundSelection/data/slim/bgs_3classes_noneq/bgs_bottleneck_noMutation.N500_rep1.trees
+    jobid: 0
+    wildcards: rep=1
+    resources: cpus=1, mem_mb=200, time_min=180, partition=jnovembre
+
+ERROR (Eidos_DefineConstantsFromCommandLine): command-line expression could not be evaluated: m=noMutation
+original error: ERROR (EidosSymbolTable::_GetValue): undefined identifier noMutation.
+
+[Tue Feb 16 02:34:15 2021]
+Error in rule simulate_bottleneck_no_mutation:
+    jobid: 0
+    output: /project2/jnovembre/ccliu/backgroundSelection/data/slim/bgs_3classes_noneq/bgs_bottleneck_noMutation.N500_rep1.trees
+
+RuleException:
+CalledProcessError in line 79 of /project2/jnovembre/ccliu/backgroundSelection/workflow/snakefile.py:
+Command 'set -euo pipefail;  slim -d u=0 -d rep=1 -d N=500 -d m=noMutation -m /project2/jnovembre/ccliu/backgroundSelection/scripts/slim/bgs_3classes_bottleneck.slim' returned non-zero exit status 1.
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/site-packages/snakemake/executors/__init__.py", line 2319, in run_wrapper
+  File "/project2/jnovembre/ccliu/backgroundSelection/workflow/snakefile.py", line 79, in __rule_simulate_bottleneck_no_mutation
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/site-packages/snakemake/executors/__init__.py", line 568, in _callback
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/concurrent/futures/thread.py", line 57, in run
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/site-packages/snakemake/executors/__init__.py", line 554, in cached_or_run
+  File "/scratch/midway2/chichun/miniconda3/envs/bgs/lib/python3.8/site-packages/snakemake/executors/__init__.py", line 2350, in run_wrapper
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message

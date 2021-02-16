@@ -1,0 +1,5 @@
+name: dadi
+channels:
+  - bioconda
+dependencies:
+  - dadi

@@ -1,0 +1,21 @@
+initialize() {
+         mut_rate = 1e-7 * 25/4;
+         l = 5e5;
+         Ud = mut_rate * l * 4/25;
+         s = 2 * Ud / log(B);
+         initializeTreeSeq();
+         initializeMutationRate(1e-7 * 25/4);
+         initializeMutationType("m1", 0.5, "f", s);
+         initializeMutationType("m2", 0.5, "f", 0);
+         initializeMutationType("m3", 0.5, "f", -0.02);
+	 initializeGenomicElementType("g1", c(m1, m2, m3), c(4, 20, 1));
+         initializeGenomicElement(g1, 0, 5e5-1);
+         initializeRecombinationRate(0);
+} 
+1{
+         sim.addSubpop("p1", N);
+	 sim.rescheduleScriptBlock(s1, start=10*N, end=10*N);
+}
+s1 1000 late() {
+         sim.treeSeqOutput("data/slim/bgs_3classes/bgs_3classes.B" + B + "_N" + N  + "_rep" + rep + ".trees");
+}
