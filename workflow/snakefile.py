@@ -97,13 +97,16 @@ rule simulate_prf_bottleneck:
     simulate from PReFerSim
     '''
     params:
-        sim_script = '{}/{}'.format(config['paths']['scripts'], 'slim/bgs_3classes_bottleneck.slim')
+        par = '{}/{}'.format(config['paths']['params'], 'PReFerSim/bottleneck/param.txt')
+        demog = '{}/{}'.format(config['paths']['params'], 'PReFerSim/bottleneck/demog.txt')
     output:
-        '{}/{}'.format(config['paths']['data'], 'slim/bgs_3classes_noneq/bgs_bottleneck_3classes.N500_rep{rep}.trees')
+        full = '{}/{}'.format(config['paths']['data'], 'PReFerSim/bottleneck/Output.{rep}.full_out.txt')
+        popsfs = '{}/{}'.format(config['paths']['data'], 'PReFerSim/bottleneck/Output.{rep}.popsfs_out.txt')
+        sfs = '{}/{}'.format(config['paths']['data'], 'PReFerSim/bottleneck/Output.{rep}.sfs_out.txt')
     resources: mem_mb=200, time_min=180
     conda: 'envs/slim.yaml'
     shell:
-        """GSL_RNG_SEED=$i GSL_RNG_TYPE=mrg ../PReFerSim/PReFerSim bottleneck_param.txt $i"""
+        """GSL_RNG_SEED={wildcards.rep} GSL_RNG_TYPE=mrg utils/PReFerSim {params.par} {wildcards.rep}"""
         
         
 rule simulate_prf_constant_size:
@@ -111,14 +114,17 @@ rule simulate_prf_constant_size:
     simulate from PReFerSim
     '''
     params:
-        sim_script = '{}/{}'.format(config['paths']['scripts'], 'slim/bgs_3classes_bottleneck.slim')
+        par = '{}/{}'.format(config['paths']['params'], 'PReFerSim/constant/param.txt')
+        demog = '{}/{}'.format(config['paths']['params'], 'PReFerSim/constant/demog.txt')
     output:
-        '{}/{}'.format(config['paths']['data'], 'slim/bgs_3classes_noneq/bgs_bottleneck_3classes.N500_rep{rep}.trees')
+        full = '{}/{}'.format(config['paths']['data'], 'PReFerSim/constant/Output.{rep}.full_out.txt')
+        popsfs = '{}/{}'.format(config['paths']['data'], 'PReFerSim/constant/Output.{rep}.popsfs_out.txt')
+        sfs = '{}/{}'.format(config['paths']['data'], 'PReFerSim/constant/Output.{rep}.sfs_out.txt')
     resources: mem_mb=200, time_min=180
     conda: 'envs/slim.yaml'
     shell:
-        """slim -d u=1e-7 -d rep={wildcards.rep} -d N={wildcards.N_bottleneck} -d "mode='3classes'" -m {params.sim_script}"""
-
+        """GSL_RNG_SEED={wildcards.rep} GSL_RNG_TYPE=mrg utils/PReFerSim {params.par} {wildcards.rep}"""
+   
 rule dadi_cache:
     '''
     create cache spectrum files 
