@@ -20,8 +20,9 @@ rule run_all:
         expand('{}/{}'.format(config['paths']['data'], 'slim/bgs_3classes/bgs_3classes.B{B}_N{N}_rep{rep}.trees'), B = Bs, rep = reps, N = Ns),
         expand('{}/{}'.format(config['paths']['data'], 'slim/bgs_3classes_noneq/bgs_bottleneck_noMutation.N500_rep{rep}.trees'), rep = reps),
         expand('{}/{}'.format(config['paths']['data'], 'slim/bgs_3classes_noneq/bgs_bottleneck_3classes.N500_rep{rep}.trees'), rep = reps),
-        expand('{}/{}'.format(config['paths']['output'], '{cache_demo}_spectra_n{ns}.bpkl'), ns = cache_spectrum_nss, cache_demo = demo_models)
-
+        expand('{}/{}'.format(config['paths']['output'], '{cache_demo}_spectra_n{ns}.bpkl'), ns = cache_spectrum_nss, cache_demo = demo_models),
+        expand('{}/{}'.format(config['paths']['params'], 'PReFerSim/{demo_model}/param.txt'), demo_model = demo_models),
+        expand('{}/{}'.format(config['paths']['params'], 'PReFerSim/{demo_model}/demog.txt'), demo_model = demo_models)
 
 rule simulate_BGS_validation:
     '''
@@ -108,7 +109,18 @@ rule simulate_prf_bottleneck:
     shell:
         """GSL_RNG_SEED={wildcards.rep} GSL_RNG_TYPE=mrg utils/PReFerSim {params.par} {wildcards.rep}"""
         
-        
+rule create_PReFerSim_params:
+    '''
+    create parameter files for PReFerSim
+    '''
+    output:
+        demog = '{}/{}'.format(config['paths']['params'], 'PReFerSim/{demo_model}/demog.txt')
+        param = '{}/{}'.format(config['paths']['params'], 'PReFerSim/{demo_model}/param.txt')
+    resources: mem_mb = 50
+    script:
+        '{}/{}'.format(config['paths']['scripts'], 'create_prefersim_param.py')
+
+
 rule simulate_prf_constant_size:
     '''
     simulate from PReFerSim
