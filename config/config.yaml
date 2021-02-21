@@ -3,3 +3,6 @@ paths:
     params: '/project2/jnovembre/ccliu/backgroundSelection/workflow/params'
     data: '/project2/jnovembre/ccliu/backgroundSelection/data'
     output: '/project2/jnovembre/ccliu/backgroundSelection/output'
+params:
+    N_standard: 5000
+    N_bottleneck: 500

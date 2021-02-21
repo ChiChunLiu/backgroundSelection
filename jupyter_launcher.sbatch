@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --time=24:00:00
-#SBATCH --partition=jnovembre
+#SBATCH --partition=broadwl
 #SBATCH --nodes=1
 #SBATCH --exclusive
 #SBATCH --ntasks-per-node=1

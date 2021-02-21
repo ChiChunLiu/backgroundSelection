@@ -1,5 +1,6 @@
-log/
+logs_slurm/
 data/
 output/
+.snakemake/
 script/**/*.err
 script/**/*.out
